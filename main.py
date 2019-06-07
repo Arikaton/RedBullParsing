@@ -3,6 +3,7 @@ import requests
 from selenium import webdriver
 import time
 
+inital_time = time.time()
 driver = webdriver.Chrome('C:\\Users\\User\\chromedriver')
 
 def find_number(link):
@@ -40,5 +41,6 @@ f = open('balls.txt', 'w')
 for l in all_links:
     f.write(l[0]+" " +l[1] + '\n')
 
+print(time.time() - inital_time)
 f.close()
 driver.close()
